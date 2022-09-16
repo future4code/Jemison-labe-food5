@@ -1,5 +1,5 @@
-export const SignupPreenchidoPage = () => {
+export const SignupPage = () => {
     return (
-         <h1>Sign up preenchido</h1>
+         <h1>Sign up</h1>
     )
     }
