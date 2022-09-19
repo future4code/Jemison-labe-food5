@@ -7,7 +7,7 @@
 ## Autores
 
 
-- [@Stefany Emidio](https://github.com/sterx17)
+- [@Ste Emidio](https://github.com/sterx17)
 - [@Veronica Dalcolmo](https://github.com/vevedm)
 - [@Daniel Barradas](https://github.com/barradasdan)
 - [@Karolina Marques](https://github.com/karolinamarques)
