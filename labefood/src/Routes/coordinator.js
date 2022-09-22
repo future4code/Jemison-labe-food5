@@ -1,3 +1,6 @@
+export const paginaAnterior = (navigator) => {
+    navigator(-1);
+}
 export const goToTelaInicialPage = (navigator) => {
     navigator('/telainicial');
 }
@@ -41,7 +44,6 @@ export const goToSearchPage = (navigator) => {
 export const goToSearchResultsPage = (navigator) => {
     navigator('/search-results');
 }
-
 export const goToRestaurantePage = (navigator) => {
     navigator('/restaurantepage');
 }

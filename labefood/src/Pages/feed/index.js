@@ -1,5 +1,10 @@
+import { HeaderFeed } from "../../Components/Header/header"
+
 export const FeedPage = () => {
     return (
-         <h1>Feed</h1>
+     <div>
+     <HeaderFeed/>
+    <h1>Feed Page</h1>
+     </div>
     )
     }
