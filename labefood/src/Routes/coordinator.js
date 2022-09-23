@@ -17,9 +17,6 @@ export const goToSignupPage = (navigator) => {
     navigator('/signup');
 }
 
-export const goToSignupPreenchidoPage = (navigator) => {
-    navigator('/signup-preenchido');
-}
 
 export const goToEnderecocadastroPage = (navigator) => {
     navigator('/endereco');

@@ -5,18 +5,21 @@ import { TituloHeader } from './style'
 import { BotaoVoltar } from './style'
 import {paginaAnterior} from '../../Routes/coordinator'
 import {DivTituloFeed} from './style'
+import { useNavigate } from 'react-router-dom'
 
 export const Header1 = () => {
+    const navigate = useNavigate()
     return(
         <HeaderStyled>
-            <BotaoVoltar onClick={paginaAnterior} src={back} alt='Voltar'/>           
+            <BotaoVoltar onClick={() => paginaAnterior(navigate)} src={back} alt='Voltar'/>           
         </HeaderStyled>
     )
 }
 export const HeaderSearch = () => {
+    const navigate = useNavigate()
     return(
         <HeaderStyled>
-            <BotaoVoltar onClick={paginaAnterior} src={back} alt='Voltar'/>
+            <BotaoVoltar onClick={() => paginaAnterior(navigate)} src={back} alt='Voltar'/>
             <DivTitulo>
             <TituloHeader>
             Busca
@@ -26,9 +29,10 @@ export const HeaderSearch = () => {
     )
 }
 export const HeaderRestaurante = () => {
+    const navigate = useNavigate()
     return(
         <HeaderStyled>
-            <BotaoVoltar onClick={paginaAnterior} src={back} alt='Voltar'/>
+            <BotaoVoltar onClick={() => paginaAnterior(navigate)} src={back} alt='Voltar'/>
             <DivTitulo>
             <TituloHeader>
             Restaurante
@@ -64,16 +68,17 @@ export const HeaderPerfil = () => {
         <HeaderStyled>
             <DivTituloFeed>
             <TituloHeader>
-            Meu Perfil
+                Meu Perfil
             </TituloHeader>
             </DivTituloFeed>            
         </HeaderStyled>
     )
 }
 export const HeaderEditar = () => {
+    const navigate = useNavigate()
     return(
         <HeaderStyled>
-            <BotaoVoltar onClick={paginaAnterior} src={back} alt='Voltar'/>
+            <BotaoVoltar onClick={() => paginaAnterior(navigate)} src={back} alt='Voltar'/>
             <DivTitulo>
             <TituloHeader>
             Editar
@@ -83,9 +88,10 @@ export const HeaderEditar = () => {
     )
 }
 export const HeaderEndereco = () => {
+    const navigate = useNavigate()
     return(
         <HeaderStyled>
-            <BotaoVoltar onClick={paginaAnterior} src={back} alt='Voltar'/>
+            <BotaoVoltar onClick={() => paginaAnterior(navigate)} src={back} alt='Voltar'/>
             <DivTitulo>
             <TituloHeader>
             Endereço
