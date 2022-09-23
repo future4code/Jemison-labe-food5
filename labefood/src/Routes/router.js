@@ -7,7 +7,7 @@ import {
   SearchPage, SearchResultsPage, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
   CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage
+  PedidoAndamentoPage, Falha, Sucesso
 } from '../Pages'
 
 export const Router = () => {
