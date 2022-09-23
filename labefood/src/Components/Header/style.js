@@ -17,7 +17,8 @@ padding: 13px 30px 12px;
 `
 
 export const TituloHeader = styled.span`
-width: 43px;
+
+width: 80px;
 height: 19px;
 font-family: Roboto;
 font-size: 18px;
@@ -37,7 +38,7 @@ cursor: pointer;
 `
 
 export const DivTituloFeed = styled.div`
-width: 175px;
+width: 100%;
 height: 44px;
 display: flex;
 justify-content: center;
