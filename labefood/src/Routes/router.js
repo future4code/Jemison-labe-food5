@@ -3,7 +3,7 @@ import {
   TelaInicialPage, LoginPage, 
   FeedPage, 
   SignupPage, SignupPreenchidoPage, EnderecoCadastroPage, 
-  PerfilPage, EditarCadastroPage, EditarEnderecoPage,
+  Perfil, EditarCadastroPage, EditarEnderecoPage,
   SearchPage, SearchResultsPage, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
   CarrinhoVazioPage, CarrinhoPage, 
@@ -20,7 +20,7 @@ export const Router = () => {
                 <Route path="/signup" element={<SignupPage/>}/>
                 <Route path="/signup-preenchido" element={<SignupPreenchidoPage/>}/>
                 <Route path="/endereco" element={<EnderecoCadastroPage/>}/>
-                <Route path="/perfil" element={<PerfilPage/>}/>
+                <Route path="/perfil" element={<Perfil />}/>
                 <Route path="/editar-cadastro" element={<EditarCadastroPage/>}/>
                 <Route path="/editar-endereco" element={<EditarEnderecoPage/>}/>
                 <Route path="/searchplaceholder" element={<SearchPage/>}/>

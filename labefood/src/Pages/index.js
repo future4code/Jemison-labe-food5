@@ -4,7 +4,7 @@ export * from './feed';
 export * from './cadastro/signup';
 export * from './cadastro/signup-preenchido';
 export * from './cadastro/endereco';
-export * from './perfil/perfil';
+export * from './perfil/perfil/Perfil';
 export * from './perfil/editar-cadastro';
 export * from './perfil/editar-endereco';
 export * from './search/searchplaceholder';
