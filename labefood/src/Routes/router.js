@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { 
   TelaInicialPage, LoginPage, 
   FeedPage, 
-  SignupPage, SignupPreenchidoPage, EnderecoCadastroPage, 
+  SignupPage, EnderecoCadastroPage, 
   PerfilPage, EditarCadastroPage, EditarEnderecoPage,
   SearchPage, SearchResultsPage, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
@@ -18,7 +18,6 @@ export const Router = () => {
                 <Route index element={<LoginPage/>}/>
                 <Route path="/feed" element={<FeedPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
-                <Route path="/signup-preenchido" element={<SignupPreenchidoPage/>}/>
                 <Route path="/endereco" element={<EnderecoCadastroPage/>}/>
                 <Route path="/perfil" element={<PerfilPage/>}/>
                 <Route path="/editar-cadastro" element={<EditarCadastroPage/>}/>
