@@ -1,4 +1,5 @@
 import { HeaderPerfil } from "../../../Components/Header/header"
+import { Footer } from "../../../Components/Footer/footer"
 
 
 export const PerfilPage = () => {
@@ -6,6 +7,7 @@ export const PerfilPage = () => {
      <div>
           <HeaderPerfil/>
          <h1>Perfil</h1>
+         <Footer/>
      </div>
     )
     }
