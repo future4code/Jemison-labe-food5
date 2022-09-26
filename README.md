@@ -12,6 +12,7 @@
 - [@Daniel Barradas](https://github.com/barradasdan)
 - [@Karolina Marques](https://github.com/karolinamarques)
 - [@VanessaMainara](https://github.com/VanessaMainara)
+- [@huanslima](https://github.com/huanslima)
 
 
 

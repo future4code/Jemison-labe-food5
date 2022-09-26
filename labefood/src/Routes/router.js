@@ -3,11 +3,11 @@ import {
   TelaInicialPage, LoginPage, 
   FeedPage, 
   SignupPage, EnderecoCadastroPage, 
-  PerfilPage, EditarCadastroPage, EditarEnderecoPage,
+  Perfil, EditarCadastro, EditarEnderecoPage,
   SearchPage, SearchResultsPage, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
   CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage
+  PedidoAndamentoPage, Falha, Sucesso
 } from '../Pages'
 
 export const Router = () => {
@@ -19,9 +19,9 @@ export const Router = () => {
                 <Route path="/feed" element={<FeedPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
                 <Route path="/endereco" element={<EnderecoCadastroPage/>}/>
-                <Route path="/perfil" element={<PerfilPage/>}/>
-                <Route path="/editar-cadastro" element={<EditarCadastroPage/>}/>
-                <Route path="/editar-endereco" element={<EditarEnderecoPage/>}/>
+                <Route path="/perfil" element={<Perfil />}/>
+                <Route path="/perfil/editar-cadastro" element={<EditarCadastro/>}/>
+                <Route path="/perfil/editar-endereco" element={<EditarEnderecoPage/>}/>
                 <Route path="/searchplaceholder" element={<SearchPage/>}/>
                 <Route path="/search-results" element={<SearchResultsPage/>}/>
                 <Route path="/restaurantepage" element={<RestaurantePage/>}/>
