@@ -7,17 +7,16 @@ import { usePutRequest } from '../Services/usePutRequest'
 
 export const GlobalState = (props) => {
 
-    const [atualizado, setAtualizado] = useState(0)
+    const [atualizado, setAtualizado] = useState('')
 
     const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': auth}}, {})
     const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': auth}}, {})
 
-    const [usuario, onChangeUsuario, clearInputsUsuario] = useForm({ name:'', email: '', cpf: ''})
-    const [endereco, onChangeEndereco, clearInputsEndereco] = useForm({ street: '', number: '', complement: '', neighbourhood: '', city: '', state: ''})
+    const [form, onChangeInputs, clearInputs] = useForm({ name:'', email: '', cpf: ''})
 
-    const putRequest = usePutRequest(`${BASE_URL}/profile`, usuario, { headers: {'auth': auth}})
+    const putRequest = usePutRequest(`${BASE_URL}/profile`, form, { headers: {'auth': auth}})
     
-    const states = {perfil, pedidos, carregando, erro, usuario, onChangeUsuario, clearInputsUsuario, atualizado, endereco, onChangeEndereco, clearInputsEndereco}
+    const states = {perfil, pedidos, carregando, erro, form, onChangeInputs, clearInputs, atualizado}
     const setters = { setAtualizado }
     const requests = { putRequest }
 
