@@ -1,3 +1,6 @@
+export const paginaAnterior = (navigator) => {
+    navigator(-1);
+}
 export const goToTelaInicialPage = (navigator) => {
     navigator('/telainicial');
 }
@@ -14,9 +17,6 @@ export const goToSignupPage = (navigator) => {
     navigator('/signup');
 }
 
-export const goToSignupPreenchidoPage = (navigator) => {
-    navigator('/signup-preenchido');
-}
 
 export const goToEnderecocadastroPage = (navigator) => {
     navigator('/endereco');
@@ -41,7 +41,6 @@ export const goToSearchPage = (navigator) => {
 export const goToSearchResultsPage = (navigator) => {
     navigator('/search-results');
 }
-
 export const goToRestaurantePage = (navigator) => {
     navigator('/restaurantepage');
 }
