@@ -15,7 +15,7 @@ export const EditarEndereco = () => {
     const salvaDadosUsuario = () => {
         if (states.endereco.street && states.endereco.number && states.endereco.neighbourhood && states.endereco.city && states.endereco.state) {
             setters.setAtualizado(1)
-            requests.putRequest()
+            requests.putEndereco()
             states.clearInputsEndereco()
         }
     }

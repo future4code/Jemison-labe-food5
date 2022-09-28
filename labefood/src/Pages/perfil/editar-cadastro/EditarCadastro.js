@@ -15,7 +15,7 @@ export const EditarCadastro = () => {
     const salvaDadosUsuario = () => {
         if (states.usuario.name && states.usuario.email && states.usuario.cpf) {
             setters.setAtualizado(1)
-            requests.putRequest()
+            requests.putUsuario()
             states.clearInputsUsuario()
         }
     }

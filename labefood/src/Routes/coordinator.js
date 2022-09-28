@@ -27,11 +27,11 @@ export const goToPerfilPage = (navigator) => {
 }
 
 export const goToEditarCadastroPage = (navigator) => {
-    navigator('/editar-cadastro');
+    navigator('/perfil/editar-cadastro');
 }
 
 export const goToEditarEnderecoPage = (navigator) => {
-    navigator('/editar-endereco');
+    navigator('/perfil/editar-endereco');
 }
 
 export const goToSearchPage = (navigator) => {
