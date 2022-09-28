@@ -4,7 +4,7 @@ import {
   FeedPage, 
   SignupPage, EnderecoCadastroPage, 
   Perfil, EditarCadastro, EditarEndereco,
-  SearchPage, SearchResultsPage, 
+  Busca, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
   CarrinhoVazioPage, CarrinhoPage, 
   PedidoAndamentoPage
@@ -22,8 +22,7 @@ export const Router = () => {
                 <Route path="/perfil" element={<Perfil />}/>
                 <Route path="/perfil/editar-cadastro" element={<EditarCadastro/>}/>
                 <Route path="/perfil/editar-endereco" element={<EditarEndereco/>}/>
-                <Route path="/searchplaceholder" element={<SearchPage/>}/>
-                <Route path="/search-results" element={<SearchResultsPage/>}/>
+                <Route path="/search" element={<Busca/>}/>
                 <Route path="/restaurantepage" element={<RestaurantePage/>}/>
                 <Route path="/defalt-restaurante" element={<DefaultRestauratePage/>}/>
                 <Route path="/confirmacaopage" element={<ConfirmacaoPage/>}/>

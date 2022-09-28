@@ -13,9 +13,11 @@ export const EditarEndereco = () => {
     const { states, setters, requests } = useContext(Contexts)
 
     const salvaDadosUsuario = () => {
-        setters.setAtualizado(1)
-        requests.putRequest()
-        states.clearInputs()
+        if (states.endereco.street && states.endereco.number && states.endereco.neighbourhood && states.endereco.city && states.endereco.state) {
+            setters.setAtualizado(1)
+            requests.putRequest()
+            states.clearInputsEndereco()
+        }
     }
 
     const respostaDoUsuario = () => {

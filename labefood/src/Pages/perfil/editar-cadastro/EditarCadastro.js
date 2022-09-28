@@ -13,9 +13,11 @@ export const EditarCadastro = () => {
     const { states, setters, requests } = useContext(Contexts)
 
     const salvaDadosUsuario = () => {
-        setters.setAtualizado(1)
-        requests.putRequest()
-        states.clearInputsUsuario()
+        if (states.usuario.name && states.usuario.email && states.usuario.cpf) {
+            setters.setAtualizado(1)
+            requests.putRequest()
+            states.clearInputsUsuario()
+        }
     }
 
     const respostaDoUsuario = () => {
