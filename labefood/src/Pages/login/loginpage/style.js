@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const ImagemLogo = styled.img`
-width: 104px;
-height: 58px;
+width: 38vw;
+height: 12vh;
+align-items: center;
+display: flex;
+justify-content: center;
 `
 
 export const LoginPageContainer = styled.div`
@@ -12,19 +15,22 @@ justify-content: center;
 gap: 20px;
 align-items: center;
 width:100%;
-height: 600px;
+height: 100vh;
 
 `
 
 export const FormContainer = styled.div`
-width: 40vw;
 display: flex;
 flex-direction: column;
 justify-content: center;
+gap: 5px;
+width: 100%;
 margin: 8px 0 0;
-padding: 19px 48px 19px 10px;
-width: 60vw;
-padding
+padding: 16px;
+input{
+    width: 100%;
+}
+
 `
 
 export const TituloEntrar = styled.h4`
@@ -50,23 +56,7 @@ background-color:  #5CB646;
  cursor:pointer;
 `
 
-export const InputEmail = styled.input`
-width: 100%;
-height: 45px;
-margin: 8px 0 0;
-padding: 16px;
-border-radius: 2px;
-border-radius: solid 1px var(--greyish);
-`
 
-export const InputSenha = styled.input`
-width: 100%;
-height: 45px;
-margin: 8px 0 0;
-padding: 16px;
-border-radius: 2px;
-border-radius: solid 1px var(--greyish);
-`
 
 export const NovoCadastro = styled.div`
 display: flex;
