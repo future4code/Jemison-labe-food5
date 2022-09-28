@@ -2,9 +2,9 @@ import { useContext } from "react"
 import { Contexts } from "../../../Global/context"
 import { useNavigate } from "react-router-dom"
 
-import { goToPerfilPage } from '../../../Routes/coordinator'
 import { HeaderEditar } from "../../../Components/Header/header"
 import { Box, Container, Stack, TextField, Button, Alert, AlertTitle } from '@mui/material'
+import { goToPerfilPage } from "../../../Routes/coordinator"
 
 
 export const EditarCadastro = () => {
@@ -56,4 +56,3 @@ export const EditarCadastro = () => {
         </Box>
     )
 }
-

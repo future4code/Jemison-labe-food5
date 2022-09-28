@@ -9,11 +9,12 @@ import {
   CarrinhoVazioPage, CarrinhoPage, 
   PedidoAndamentoPage
 } from '../Pages'
+//import RegisterForm from '../Pages/cadastro/registerForm'
 
 export const Router = () => {
     return(
         <BrowserRouter>
-              <Routes>
+          <Routes>
                 <Route path="/telainicial" element={<TelaInicialPage/>}/>
                 <Route index element={<LoginPage/>}/>
                 <Route path="/feed" element={<FeedPage/>}/>
