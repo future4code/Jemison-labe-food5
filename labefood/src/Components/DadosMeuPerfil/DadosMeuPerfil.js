@@ -1,10 +1,26 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { goToEditarCadastroPage, goToEditarEnderecoPage } from '../../Routes/coordinator'
 import { Box, Container, Grid, Stack, Typography } from '@mui/material'
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import { Contexts } from '../../Global/context';
 
 
 export const DadosMeuPerfil = (props) => {
+  const navigate = useNavigate()
+
+  const { setters} = useContext(Contexts)
+
+  const editorCadastro = () => {
+    setters.setAtualizado(0)
+    goToEditarCadastroPage(navigate)
+  }
+
+  const editorEndereco = () => {
+    setters.setAtualizado(0)
+    goToEditarEnderecoPage(navigate)
+  }
+
   return (
     <Box>
       <Box paddingY={'1rem'}>
@@ -18,7 +34,7 @@ export const DadosMeuPerfil = (props) => {
               </Stack>
             </Grid>
             <Grid item xs={1}>
-              <EditOutlinedIcon fontSize='small' />
+              <EditOutlinedIcon fontSize='small' onClick={editorCadastro} />
             </Grid>
           </Grid>
         </Container>
@@ -33,7 +49,7 @@ export const DadosMeuPerfil = (props) => {
               </Stack>
             </Grid>
             <Grid item xs={1}>
-              <EditOutlinedIcon fontSize='small' />
+              <EditOutlinedIcon fontSize='small' onClick={editorEndereco}/>
             </Grid>
           </Grid>
         </Container>

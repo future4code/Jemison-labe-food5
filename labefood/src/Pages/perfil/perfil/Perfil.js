@@ -6,7 +6,7 @@ import { CardHistoricoPedidos } from '../../../Components/CardHistoricoPedidos/C
 import { Contexts } from "../../../Global/context"
 
 import { Box, Container, Typography, Divider} from '@mui/material';
-
+ //
 
 export const Perfil = () => {
 
