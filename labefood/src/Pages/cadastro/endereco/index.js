@@ -1,4 +1,4 @@
-import { Header1 } from "../../../Components/Header/header"
+/*import { Header1 } from "../../../Components/Header/header"
 
 export const EnderecoCadastroPage = () => {
     return (
@@ -7,4 +7,4 @@ export const EnderecoCadastroPage = () => {
          <h1>Endereço de cadastro</h1>
      </div>
     )
-    }
+    }*/

@@ -1,14 +1,16 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+//import Signup from '../Pages/cadastro/signup/Signup'
 import { 
   TelaInicialPage, LoginPage, 
   FeedPage, 
-  SignupPage, EnderecoCadastroPage, 
+   EnderecoCadastroPage, 
   Perfil, EditarCadastro, EditarEnderecoPage,
   Busca, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
   CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage
+  PedidoAndamentoPage, SignupPage 
 } from '../Pages'
+//import { SignupPage } from '../Pages/cadastro/signup/SignupPage'
 //import RegisterForm from '../Pages/cadastro/registerForm'
 
 export const Router = () => {
