@@ -1,5 +1,5 @@
 import { Contexts } from "../../Global/context"
-import { useContext } from "react"
+import { useContext} from "react"
 
 import { HeaderSearch } from "../../Components/Header/header"
 import { BarraBusca } from "../../Components/BarraBusca/BarraBusca"
@@ -10,28 +10,31 @@ export const Busca = () => {
 
     const { states } = useContext(Contexts)
 
-    console.log(states.restaurantes.restaurants)
+
 
     return (
-        <div>
-            <HeaderSearch />
-            <BarraBusca />
-
-        </div>
-    )
-}
+            <div>
+                <HeaderSearch />
+                <BarraBusca />
+                {(states.searchInput.searchResults) ?
+                    states.restaurantes && states.restaurantes.restaurants && states.restaurantes.restaurants.filter((item)=>{
+                        return item.name.toLowerCase().includes(states.searchInput.searchResults.toLowerCase())}).map((restaurante, index) => {
+                        return <BuscaResultadoCard key={index} logo={restaurante.logoUrl} name={restaurante.name} deliveryTime={restaurante.deliveryTime} shipping={restaurante.shipping} />
+                     })
+                :
+                <Container><Box marginTop={'1rem'}><Typography textAlign={'center'} width={'100%'} variant="subtitle1">Busque por nome de restaurante</Typography></Box></Container>
+            }
+            </div>
+        )
+    }
 
 /*
 
-<BuscaResultadoCard key={index} logo={restaurante.logoUrl} name={restaurante.name} deliveryTime={restaurante.deliveryTime} shipping={restaurante.shipping} />
 
-<Container>
-    <Box marginTop={'1rem'}>
-        <Typography textAlign={'center'} width={'100%'} variant="subtitle1">Busque por nome de restaurante</Typography>
-    </Box>
-</Container>
+return item.name.includes(states.searchInput.searchResults)                
                         
-                        
-                        
+<Container><Box marginTop={'1rem'}><Typography textAlign={'center'} width={'100%'} variant="subtitle1">Busque por nome de restaurante</Typography></Box></Container>             
+                
+                
 
 */
