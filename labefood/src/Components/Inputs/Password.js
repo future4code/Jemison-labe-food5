@@ -1,7 +1,7 @@
 import { InputPassword, InputStyle } from "./styled"
 import { useState } from "react"
-import password1 from '../../images/password1.png';
-import password2 from '../../images/password2.png';
+import password1 from '../../img/password1.png';
+import password2 from '../../img/password2.png';
 
 export const Password = ( { label, name, placeholder, value, onChange, color, isValid, errorMessage} ) => {
 
