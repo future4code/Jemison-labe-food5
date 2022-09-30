@@ -2,7 +2,7 @@ export * from './login/telainicial';
 export * from './login/loginpage';
 export * from './feed';
 export * from './cadastro/signup/SignupPage';
-export * from './cadastro/endereco';
+export * from './cadastro/endereco/CadastroEndereco';
 export * from './perfil/perfil/Perfil';
 export * from './perfil/editar-cadastro/EditarCadastro';
 export * from './perfil/editar-endereco';

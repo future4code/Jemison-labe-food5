@@ -2,8 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 //import Signup from '../Pages/cadastro/signup/Signup'
 import { 
   TelaInicialPage, LoginPage, 
-  FeedPage, 
-   EnderecoCadastroPage, 
+  FeedPage,  
   Perfil, EditarCadastro, EditarEnderecoPage,
   Busca, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
@@ -12,6 +11,7 @@ import {
 } from '../Pages'
 //import { SignupPage } from '../Pages/cadastro/signup/SignupPage'
 //import RegisterForm from '../Pages/cadastro/registerForm'
+import CadastroEndereco from '../Pages/cadastro/endereco/CadastroEndereco'
 
 export const Router = () => {
     return(
@@ -21,7 +21,7 @@ export const Router = () => {
                 <Route index element={<LoginPage/>}/>
                 <Route path="/feed" element={<FeedPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
-                <Route path="/endereco" element={<EnderecoCadastroPage/>}/>
+                <Route path="/endereco" element={<CadastroEndereco/>}/>
                 <Route path="/perfil" element={<Perfil />}/>
                 <Route path="/perfil/editar-cadastro" element={<EditarCadastro/>}/>
                 <Route path="/perfil/editar-endereco" element={<EditarEnderecoPage/>}/>
