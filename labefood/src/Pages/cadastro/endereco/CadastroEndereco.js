@@ -85,7 +85,7 @@ const CadastroEndereco = () => {
                 <Neighbourhood name="neighbourhood" value={form.neighbourhood} onChange={onChange} color="#B8B8B8" isValid={isNeighbourhoodValid}/>
                 <City name="city" value={form.city} onChange={onChange} color="#B8B8B8" isValid={isCityValid}/>
                 <State name="state" value={form.state} onChange={onChange} color="#B8B8B8" isValid={isStateValid}/>
-                <Button type="submit" color="#5CB646"  buttonTitle="Salvar"/>
+                <Button variant="contained">Salvar</Button>
                 </form>
 
                 : 
@@ -98,7 +98,7 @@ const CadastroEndereco = () => {
                 <City name="city" value={form.city} onChange={onChange} color="#e02020" isValid={isCityValid}/>
                 <State name="state" value={form.state} onChange={onChange} color="#e02020" isValid={isStateValid}/>
                 <p>{errorText}.</p>
-                <Button type="submit" color="#5CB646" buttonTitle="Salvar"/>
+                <Button variant="contained">Salvar</Button>
                 </form>}
         </EnderecoCadastroStyled>
         </>

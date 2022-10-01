@@ -82,7 +82,7 @@ export const SignupPage = () => {
                     <CPF name="cpf" value={form.cpf} onChange={onChange} color="#B8B8B8" isValid={isCPFValid}/>
                     <Password name="password" value={form.password} onChange={onChange} label="Senha*" placeholder="Mínimo 6 caracteres" color="#B8B8B8" isValid={isPasswordValid} errorMessage="A senha deve possuir no mínimo 6 caracteres"/>
                     <Password name="password-check" value={confirmPassword} onChange={(e) => {setConfirmPassword(e.target.value)}} label="Confirmar*" placeholder="Confirme a senha anterior" color="#B8B8B8" isValid={isConfirmPasswordValid} errorMessage="Deve ser a mesma que a anterior."/>
-                    <Button onClick={() => goToEnderecocadastroPage(navigate)}variant="contained">Criar</Button>
+                    <Button onClick={() => goToEnderecocadastroPage(navigate)} variant="contained">Criar</Button>
                 </form>
                 
                 : 
