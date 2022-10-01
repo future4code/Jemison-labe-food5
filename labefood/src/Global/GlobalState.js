@@ -15,6 +15,9 @@ export const GlobalState = (props) => {
       `${BASE_URL}/restaurants`,
       { headers: {'auth': auth}},{}
     );
+
+    const [restaurantId, setRestaurantId] = useState([])  
+
     const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': auth}}, {})
     
     const [productsCart, setProductsCart] = useState([])
@@ -32,6 +35,8 @@ export const GlobalState = (props) => {
                     clearInputs, 
                     atualizado, 
                     restaurants, 
+                    restaurantId,
+                    setRestaurantId,
                     getRestaurants,
                     loadingRestaurants,
                     errorRestaurants,
