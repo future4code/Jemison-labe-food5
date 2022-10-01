@@ -6,7 +6,7 @@ import { Neighbourhood } from "../../../Components/Inputs/Neighbourhood";
 import { Number } from "../../../Components/Inputs/Number";
 import { State } from "../../../Components/Inputs/State";
 import { Street } from "../../../Components/Inputs/Street";
-import { EnderecoCadastroStyled, TextContainer } from "./styled";
+import { EnderecoCadastroStyled, TextContainer} from "./styled";
 import { Button } from '@mui/material';
 import { useForm } from "../../../Hook/useForm";
 import axios from "axios";
@@ -14,8 +14,9 @@ import { BASE_URL } from "../../../Constants/constants";
 import { useNavigate } from "react-router-dom";
 import { validateStreet, validateNumber, validateComplement, 
         validateNeighbourhood, validateCity, validateState } from "../../../Constants/constants";
-import { goToFeed } from "../../../Routes/coordinator";
+import { goToFeed, goToLoginPage } from "../../../Routes/coordinator";
 import { Header1 } from '../../../Components/Header/header'
+
 
 
 const CadastroEndereco = () => {
@@ -85,7 +86,7 @@ const CadastroEndereco = () => {
                 <Neighbourhood name="neighbourhood" value={form.neighbourhood} onChange={onChange} color="#B8B8B8" isValid={isNeighbourhoodValid}/>
                 <City name="city" value={form.city} onChange={onChange} color="#B8B8B8" isValid={isCityValid}/>
                 <State name="state" value={form.state} onChange={onChange} color="#B8B8B8" isValid={isStateValid}/>
-                <Button variant="contained">Salvar</Button>
+                <Button onClick={() => goToFeed(navigate) }variant="contained">Salvar</Button>
                 </form>
 
                 : 
@@ -98,7 +99,7 @@ const CadastroEndereco = () => {
                 <City name="city" value={form.city} onChange={onChange} color="#e02020" isValid={isCityValid}/>
                 <State name="state" value={form.state} onChange={onChange} color="#e02020" isValid={isStateValid}/>
                 <p>{errorText}.</p>
-                <Button variant="contained">Salvar</Button>
+                <Button onClick={() => goToFeed(navigate) }variant="contained">Salvar</Button>
                 </form>}
         </EnderecoCadastroStyled>
         </>
