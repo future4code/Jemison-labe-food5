@@ -40,7 +40,7 @@ const CadastroEndereco = () => {
     const [isNeighbourhoodValid, setIsNeighbourhoodValid] = useState(true)
     const [isCityValid, setIsCityValid] = useState(true)
     const [isStateValid, setIsStateValid] = useState(true)
-    
+
     const [errorText, setErrorText] = useState(undefined)
 
     const EditAddress = () => {
@@ -79,7 +79,7 @@ const CadastroEndereco = () => {
             {isValid ?
 
                 <form onSubmit={onSubmit}>
-                <Street name="street" value={form.street} onChange={onChange} color="#B8B8B8" isValid={isStreetValid}/>
+                <Street name="street" value={form.street} onChange={onChange} color="#B8B8B8" isValid={setIsValid}/>
                 <Number name="number" value={form.number} onChange={onChange} color="#B8B8B8" isValid={isNumberValid}/>
                 <Complement name="complement" value={form.complement} onChange={onChange} color="#B8B8B8" isValid={isComplementValid}/>
                 <Neighbourhood name="neighbourhood" value={form.neighbourhood} onChange={onChange} color="#B8B8B8" isValid={isNeighbourhoodValid}/>
@@ -87,9 +87,9 @@ const CadastroEndereco = () => {
                 <State name="state" value={form.state} onChange={onChange} color="#B8B8B8" isValid={isStateValid}/>
                 <Button type="submit" color="#5CB646"  buttonTitle="Salvar"/>
                 </form>
-                
+
                 : 
-                
+
                 <form onSubmit={onSubmit}>
                 <Street name="street" value={form.street} onChange={onChange} color="#e02020" isValid={isStreetValid}/>
                 <Number name="number" value={form.number} onChange={onChange} color="#e02020" isValid={isNumberValid}/>
