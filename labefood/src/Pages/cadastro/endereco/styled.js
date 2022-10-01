@@ -34,5 +34,6 @@ export const TextContainer = styled.div`
     color: var(--black);
     text-decoration: none;
   }
+
 `
 
