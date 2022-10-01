@@ -1,4 +1,4 @@
-export * from './login/telainicial';
+export * from './LogoPage/LogoPage';
 export * from './login/loginpage';
 export * from './feed';
 export * from './cadastro/signup/SignupPage';

@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 //import Signup from '../Pages/cadastro/signup/Signup'
 import { 
-  TelaInicialPage, LoginPage, 
+  LoginPage, 
   FeedPage,  
   Perfil, EditarCadastro, EditarEnderecoPage,
   Busca, 
@@ -12,12 +12,13 @@ import {
 //import { SignupPage } from '../Pages/cadastro/signup/SignupPage'
 //import RegisterForm from '../Pages/cadastro/registerForm'
 import CadastroEndereco from '../Pages/cadastro/endereco/CadastroEndereco'
+import { LogoPage } from './../Pages/LogoPage/LogoPage';
 
 export const Router = () => {
     return(
         <BrowserRouter>
           <Routes>
-                <Route path="/telainicial" element={<TelaInicialPage/>}/>
+                <Route path="/telainicial" element={<LogoPage/>}/>
                 <Route index element={<LoginPage/>}/>
                 <Route path="/feed" element={<FeedPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
