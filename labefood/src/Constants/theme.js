@@ -1,9 +1,13 @@
 import { createTheme } from "@mui/material";
 
-const theme = createTheme({
+export const theme = createTheme({
     components: {
-        
-    }
-
-    }
-)
+        MuiTab: {
+          styleOverrides: {
+            root: {
+              textTransform: 'none',
+            },
+          },
+        },
+      },
+})

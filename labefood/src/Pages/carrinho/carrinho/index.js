@@ -10,20 +10,17 @@ import { useContext } from "react"
 
 export const CarrinhoPage = () => {
 
-     const {
-          productsCart,
-          setProductsCart
-     } = useContext(Contexts);
+     const { states } = useContext(Contexts);
 
      const [productInfo, setProductInfo] = useState([])
 
      useEffect(() => {
-          productsCart.map((product) => {
+          states && states.productsCart && states.productsCart.map((product) => {
                productInfo.push({id: product.id, quantity: product.quantity})
           })
      }, [])
 
-     const productRender = productsCart.map((product) => {
+     const productRender = states && states.productsCart && states.productsCart.map((product) => {
           return(
              <CardProductsDiv>
                <ProductImage

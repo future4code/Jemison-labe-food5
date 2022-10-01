@@ -11,9 +11,9 @@ export const GlobalState = (props) => {
 
     const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': auth}}, {})
 
-    const [restaurants, getRestaurants, loadingRestaurants, errorRestaurants] = useRequestData(
+    const [rest, loadingRestaurants, errorRestaurants] = useRequestData(
       `${BASE_URL}/restaurants`,
-      { headers: {'auth': auth}},{}
+      { headers: {'auth': auth}}, {}
     );
 
     const [restaurantId, setRestaurantId] = useState([])  
@@ -32,22 +32,19 @@ export const GlobalState = (props) => {
                     erro, 
                     form, 
                     onChangeInputs,
-                    clearInputs, 
-                    atualizado, 
-                    restaurants, 
-                    restaurantId,
-                    setRestaurantId,
-                    getRestaurants,
+                    clearInputs,
+                    rest,
                     loadingRestaurants,
                     errorRestaurants,
+                    atualizado, 
+                    restaurantId,
                     productsCart,
-                    setProductsCart
                   }
-    const setters = { setAtualizado }
+    const setters = { setAtualizado, setRestaurantId, setProductsCart }
     const requests = { putRequest }
 
   return (
-      <Contexts.Provider value={states}>
+      <Contexts.Provider value={{ states, setters, requests }}>
         {props.children}
       </Contexts.Provider>
   )

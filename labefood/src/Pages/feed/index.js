@@ -1,53 +1,55 @@
-import { CardContent, CardMedia, Typography, MenuItem, FormControl, InputLabel, Card } from "@mui/material";
-import { useContext, useState } from "react";
+import { Box, CardContent, CardMedia, Typography, Tabs, Tab, Card, ThemeProvider } from "@mui/material";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { HeaderFeed } from "../../Components/Header/header";
 import { Contexts } from "../../Global/context";
 import { goToDefaultRestaurantePage } from "../../Routes/coordinator";
 import { BodyStyle, CardStyled, MainCard, SelectCat } from "./styled-feed";
 import { midGreen, greyish } from "../../Constants/colors";
-import { margin } from "@mui/system";
+import { theme } from '../../Constants/theme'
 
-    
+
 export const FeedPage = () => {
+
   const navigate = useNavigate();
 
 
-  const {restaurants, getRestaurants, loadingRestaurants, errorRestaurants} = useContext(Contexts);
-  
+  const { states } = useContext(Contexts);
 
-  console.log(restaurants)
+  const [category, setCategory] = useState('');
 
-  const [category, setCategory] = useState('')
 
-  const catFilter = (event) => {
-    setCategory(event.target.value);
-  };
-
-  const renderRestaurants = restaurants.restaurants && restaurants.restaurants
-    .filter((restaurant) => {
-      return restaurant.category
-        .toLowerCase()
-        .includes(category.toLowerCase());
-    })
-    .map((restaurant) => {
-        
-    return(
-      
-      
-        
-       
-          <Card sx={{minWidth: 330}}   key={restaurant.id} onClick={() => {goToDefaultRestaurantePage(navigate, restaurant.id)}}>
-            <CardMedia
-              component = 'img'
-              height= '140'
-              image={restaurant.logoUrl}
-              alt= 'Logo do restaurante'
-            />
+  return (
+    <ThemeProvider theme={theme}>
+    <BodyStyle>
+      <HeaderFeed />
+      <Box sx={{ maxWidth: { xs: 320, sm: 480 } }}>
+        <Tabs
+          value={category}
+          onChange={(ev, val) => setCategory(val)}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="Categorias"
+        >
+          <Tab label="Árabe" value="árabe"/>
+          <Tab label="Sorvete" value="sorvetes" />
+          <Tab label="Carnes" value="carnes" />
+          <Tab label="Petiscos" value="petiscos" />
+          <Tab label="Asiática" value="asiática" />
+          <Tab label="Hamburguer" value="hamburguer" />
+          <Tab label="Italiana" value="italiana" />
+          <Tab label="Baiana" value="baiana" />
+          <Tab label="Mexicana" value="mexicana" />
+        </Tabs>
+      </Box>
+      {states && !states.loadingRestaurants && states.rest && states.rest.restaurants && states.rest.restaurants.filter((item) => {
+        return item.category.toLowerCase().includes(category.toLowerCase())
+      }).map((restaurant, index) => {
+        return (
+          <Card sx={{ minWidth: 330 }} key={restaurant.id} onClick={() => { goToDefaultRestaurantePage(navigate, restaurant.id) }}>
+            <CardMedia component='img' height='140' image={restaurant.logoUrl} alt='Logo do restaurante' />
             <CardContent >
-              <Typography color={midGreen}>
-                {restaurant.name}
-              </Typography>
+              <Typography color={midGreen}>{restaurant.name}</Typography>
               <MainCard>
                 <Typography color={greyish}>
                   {restaurant.deliveryTime} - {restaurant.deliveryTime + 10} min
@@ -58,45 +60,12 @@ export const FeedPage = () => {
               </MainCard>
             </CardContent>
           </Card>
-        
-      
-    )
-  })
-    
-
-  return(
-
-    <BodyStyle>
-      <HeaderFeed />
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">
-              Filtrar
-            </InputLabel>
-            <SelectCat
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
-              value={category}
-              onChange={catFilter}
-              autoWidth
-              label="Filtrar"
-            >
-              <MenuItem value="">
-                <em>Categoria</em>
-              </MenuItem>
-              <MenuItem value={"árabe"}>Árabe</MenuItem>
-              <MenuItem value={"sorvetes"}>Sorvete</MenuItem>
-              <MenuItem value={"carnes"}>Carnes</MenuItem>
-              <MenuItem value={"petiscos"}>Petiscos</MenuItem>
-              <MenuItem value={"asiática"}>Asiática</MenuItem>
-              <MenuItem value={"hamburguer"}>Burguer</MenuItem>
-              <MenuItem value={"italiana"}>Italiana</MenuItem>
-              <MenuItem value={"baiana"}>Baiana</MenuItem>
-              <MenuItem value={"mexicana"}>Mexicana</MenuItem>
-      </SelectCat>
-      </FormControl>
-      { !loadingRestaurants && renderRestaurants}
-      { !loadingRestaurants && errorRestaurants && <p>Erro. Tente outra vez!</p> }
+        )
+      })
+      }
+      {states && !states.loadingRestaurants && states.errorRestaurants && <p>Erro. Tente outra vez!</p>}
     </BodyStyle>
+    </ThemeProvider>
   )
-    
+
 }
