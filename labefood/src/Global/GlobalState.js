@@ -24,6 +24,8 @@ export const GlobalState = (props) => {
 
     const [form, onChangeInputs, clearInputs] = useForm({ name:'', email: '', cpf: ''})
 
+    const [searchInput, onChangeSearch] = useForm({searchResults: ''})
+
     const putRequest = usePutRequest(`${BASE_URL}/profile`, form, { headers: {'auth': auth}})
     
     const states = {perfil, 
@@ -39,6 +41,8 @@ export const GlobalState = (props) => {
                     atualizado, 
                     restaurantId,
                     productsCart,
+                    searchInput, 
+                    onChangeSearch
                   }
     const setters = { setAtualizado, setRestaurantId, setProductsCart }
     const requests = { putRequest }

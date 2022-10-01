@@ -9,5 +9,24 @@ export const theme = createTheme({
             },
           },
         },
+        MuiCardContent: {
+          styleOverrides: {
+              root: {
+                  padding: undefined,
+                  "&:last-child": {
+                    paddingBottom: '0.75em'
+                  }
+                },
+          },
       },
+      },
+      palette: {
+        primary: {
+            main: '#B8B8B8',
+        },
+        secondary: {
+            main: '#5CB646',
+        },
+    },
 })
+
