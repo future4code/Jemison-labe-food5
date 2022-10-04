@@ -9,6 +9,8 @@ import { BodyStyle, CardStyled, MainCard, SelectCat } from "./styled-feed";
 import { midGreen, greyish } from "../../Constants/colors";
 import { theme } from '../../Constants/theme'
 
+import { goToSearchPage } from "../../Routes/coordinator";
+
 
 export const FeedPage = () => {
 
@@ -23,7 +25,7 @@ export const FeedPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <HeaderFeed />
-      <BarraBusca />
+      <BarraBusca onClick={() => { goToSearchPage(navigate)}} />
     <BodyStyle>
       <Box sx={{ maxWidth: { xs: 320, sm: 480 } }}>
         <Tabs

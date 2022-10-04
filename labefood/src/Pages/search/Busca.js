@@ -17,7 +17,7 @@ export const Busca = () => {
                 <HeaderSearch />
                 <BarraBusca />
                 {(states.searchInput.searchResults) ?
-                    states.restaurantes && states.restaurantes.restaurants && states.restaurantes.restaurants.filter((item)=>{
+                    states.rest && states.rest.restaurants && states.rest.restaurants.filter((item)=>{
                         return item.name.toLowerCase().includes(states.searchInput.searchResults.toLowerCase())}).map((restaurante, index) => {
                         return <BuscaResultadoCard key={index} logo={restaurante.logoUrl} name={restaurante.name} deliveryTime={restaurante.deliveryTime} shipping={restaurante.shipping} />
                      })
@@ -27,14 +27,3 @@ export const Busca = () => {
             </div>
         )
     }
-
-/*
-
-
-return item.name.includes(states.searchInput.searchResults)                
-                        
-<Container><Box marginTop={'1rem'}><Typography textAlign={'center'} width={'100%'} variant="subtitle1">Busque por nome de restaurante</Typography></Box></Container>             
-                
-                
-
-*/

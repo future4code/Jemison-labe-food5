@@ -3,10 +3,9 @@ import {
   TelaInicialPage, LoginPage, 
   SignupPage, EnderecoCadastroPage,
   Perfil, EditarCadastro, EditarEnderecoPage,
-  Busca, 
-  RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
+  Busca, Confirmacao, 
   CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage, FeedPage
+  PedidoAndamentoPage, FeedPage, Restaurante
 } from '../Pages'
 //import RegisterForm from '../Pages/cadastro/registerForm'
 
@@ -25,9 +24,8 @@ export const Router = () => {
                 <Route path="/perfil/editar-cadastro" element={<EditarCadastro/>}/>
                 <Route path="/perfil/editar-endereco" element={<EditarEnderecoPage/>}/>
                 <Route path="/search" element={<Busca/>}/>
-                <Route path="/restaurantepage" element={<RestaurantePage/>}/>
-                <Route path="/defalt-restaurante" element={<DefaultRestauratePage/>}/>
-                <Route path="/confirmacaopage" element={<ConfirmacaoPage/>}/>
+                <Route path="/restaurante/:id" element={<Restaurante/>}/>
+                <Route path="/confirmacao" element={<Confirmacao/>}/>
                 <Route path="/carrinho-vazio" element={<CarrinhoVazioPage/>}/>
                 <Route path="/carrinho" element={<CarrinhoPage/>}/>
                 <Route path="/pedido-andamento" element={<PedidoAndamentoPage/>}/>

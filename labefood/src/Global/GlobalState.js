@@ -9,6 +9,12 @@ export const GlobalState = (props) => {
 
     const [atualizado, setAtualizado] = useState('')
 
+    const [abreConfirm, setAbreConfirm] = useState(false)
+
+    const [selectControl, setSelectControl] = useState('')
+
+    const [ product, setProduct ] = useState('')
+
     const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': auth}}, {})
 
     const [rest, loadingRestaurants, errorRestaurants] = useRequestData(
@@ -16,7 +22,9 @@ export const GlobalState = (props) => {
       { headers: {'auth': auth}}, {}
     );
 
-    const [restaurantId, setRestaurantId] = useState([])  
+    const [restaurantId, setRestaurantId] = useState('')
+
+    const [restaurantDetails, loadingDetails, errorDetails] = useRequestData(`${BASE_URL}/restaurants/${restaurantId}`, { headers: {'auth': auth}}, {})
 
     const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': auth}}, {})
     
@@ -42,9 +50,15 @@ export const GlobalState = (props) => {
                     restaurantId,
                     productsCart,
                     searchInput, 
-                    onChangeSearch
+                    onChangeSearch,
+                    restaurantDetails,
+                    loadingDetails,
+                    errorDetails,
+                    abreConfirm,
+                    selectControl,
+                    product
                   }
-    const setters = { setAtualizado, setRestaurantId, setProductsCart }
+    const setters = { setAtualizado, setRestaurantId, setProductsCart, setAbreConfirm, setSelectControl, setProduct }
     const requests = { putRequest }
 
   return (
