@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContainerLogo, Botao } from "./style";
 import logo from '../../img/logo-black.png'
@@ -15,10 +15,18 @@ export const LogoPage = () => {
         goToLoginPage(navigate)
     }
 
-    return(
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            loginPage()
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
         <ContainerLogo>
-            <Botao onClick={() => loginPage(navigate)} > <img src={logo} /> </Botao>
-            
+            <Botao>
+                <img src={logo} alt='' /> 
+            </Botao>
         </ContainerLogo>
     )
 }
