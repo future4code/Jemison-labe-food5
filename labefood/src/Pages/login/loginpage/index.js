@@ -5,25 +5,28 @@ import { LoginPageContainer, FormContainer, DivEntrar, BotaoEntrar,
 ImagemLogo, TituloEntrar, NovoCadastro, BotaoCadastro } from './style'
 import logo from '../../../img/logo.png'
 import {goToSignupPage} from '../../../Routes/coordinator'
-import { InputAdornment, TextField, Typography } from '@mui/material'
-import { Visibility, VisibilityOff} from '@mui/icons-material'
+import { FormControl, 
+         IconButton, 
+         InputAdornment, 
+         InputLabel, 
+         OutlinedInput, 
+         Typography } from '@mui/material'
 import { useState } from 'react'
-import {IconButton} from '@mui/material'
+import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 
 
 export const LoginPage = () => {
 
-     const [linhaInput, setLinhaInput] = useState({
-          showPassword: false
-     })
-     const showPassword = () => {
-          setLinhaInput({...linhaInput, showPassword: !linhaInput.showPassword})
-     }
+    const [showPassword, setShowPassword] = useState(false)
 
-     const atualizando = (e) => {
-          e.preventDefault()
-     }
+    const onClickShowPassword = () => {
+          setShowPassword(!showPassword)
+    }
+
+     // const atualizando = (e) => {
+     //      e.preventDefault()
+     // }
 
 
      const navigate = useNavigate()
@@ -59,14 +62,17 @@ return (
           </TituloEntrar>
           <FormContainer>
                <form onSubmit={handleClick}>
-                    <TextField
+
+                    <FormControl fullWidth sx={{ m: 0, mb: 1}} variant="outlined">
+                    <InputLabel  htmlFor="outlined-adornment-password" >E-mail*</InputLabel>
+                    <OutlinedInput
                     name="email"
                     value={form.email}
                     onChange={onChangeInputs}
                     variant={"outlined"}
                     margin={"normal"}
-                    placeholder="email@email.com"
-                    type={linhaInput.showPassword ? "text": "email"}
+                    placeholder="Ex: email@email.com"
+                    type={'email'}
                     InputLabelProps={{
                          shrink: true
                     }}
@@ -74,39 +80,40 @@ return (
                     label={"E-mail"}
                     required
                     />
-                    <TextField
+                    </FormControl> 
+
+                    <FormControl fullWidth sx={{ m: 0, mb: 1}} variant="outlined">
+                    <InputLabel  htmlFor="outlined-adornment-password" >Senha*</InputLabel>
+                    <OutlinedInput
                     name="password"
                     value={form.password}
                     onChange={onChangeInputs}
                     variant={"outlined"}
                     margin={"normal"}
-                    placeholder="Mínimo 6 caracteres"
-                    pattern="^.{6,}$"
                     fullWidth
                     label={"Senha"}
-                    type={linhaInput.showPassword ? "text": "password"}
+                    type={showPassword ? 'text' : 'password'}
                     InputLabelProps={{
                          shrink: true
-                    }}
-                    inputProps={{
-                         endAdornment:(
-                              <InputAdornment position='end'>
-                                   <IconButton 
-                                   arial-label="toggle password visibility"
-                                   onClick={showPassword} 
-                                   onMouseDown={atualizando}
-                                   edge="end"
-                                   >
-                                        {linhaInput.showPassword ? <Visibility/>: <VisibilityOff/>}
-
-                                   </IconButton>
-                              </InputAdornment>
-                         )
-                    }}
+                    }}    
                     required
+                    endAdornment={
+                         <InputAdornment position='end'>
+                              <IconButton
+                                   aria-label='toogle password visibility'
+                                   onClick={onClickShowPassword}
+                                   edge="end"
+                              >
+                              {showPassword ?  <Visibility/> : <VisibilityOff/> }
+                              </IconButton>
+                         </InputAdornment>
+                    }
+                    
                     />
+                    </FormControl> 
+
                     <DivEntrar>
-                    <BotaoEntrar type='submit'>Entrar</BotaoEntrar>
+                         <BotaoEntrar type='submit'>Entrar</BotaoEntrar>
                     </DivEntrar>
                </form>
           </FormContainer>
