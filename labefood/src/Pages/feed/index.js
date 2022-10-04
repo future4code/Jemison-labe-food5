@@ -2,6 +2,7 @@ import { Box, CardContent, CardMedia, Typography, Tabs, Tab, Card, ThemeProvider
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { HeaderFeed } from "../../Components/Header/header";
+import { BarraBusca } from '../../Components/BarraBusca/BarraBusca'
 import { Contexts } from "../../Global/context";
 import { goToDefaultRestaurantePage } from "../../Routes/coordinator";
 import { BodyStyle, CardStyled, MainCard, SelectCat } from "./styled-feed";
@@ -21,8 +22,9 @@ export const FeedPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <BodyStyle>
       <HeaderFeed />
+      <BarraBusca />
+    <BodyStyle>
       <Box sx={{ maxWidth: { xs: 320, sm: 480 } }}>
         <Tabs
           value={category}
@@ -30,6 +32,8 @@ export const FeedPage = () => {
           variant="scrollable"
           scrollButtons="auto"
           aria-label="Categorias"
+          textColor="secondary"
+          indicatorColor="#fff"
         >
           <Tab label="Árabe" value="árabe"/>
           <Tab label="Sorvete" value="sorvetes" />
