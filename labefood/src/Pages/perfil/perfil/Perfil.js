@@ -6,6 +6,7 @@ import { CardHistoricoPedidos } from '../../../Components/CardHistoricoPedidos/C
 import { Contexts } from "../../../Global/context"
 
 import { Box, Container, Typography, Divider} from '@mui/material';
+import { Subtitulo } from "../../../Components/Subtitulo/Subtitulo"
 
 
 export const Perfil = () => {
@@ -15,12 +16,7 @@ export const Perfil = () => {
      <Box>
         <HeaderPerfil/>
         <DadosMeuPerfil user={states.perfil.user} />
-        <Container>
-            <Box marginY={'2.5%'}>
-              <Typography marginBottom={'1.25%'} color='#000' component='h2' variant="subtitle1">Histórico de pedidos</Typography>
-              <Divider color='#000' />
-            </Box>
-        </Container>
+        <Subtitulo Subtitulo='Histórico de Pedidos' />
         {states.carregando && (<p>Carregando Histórico de Pedidos</p>)}
         {!states.carregando && states.erro && (<p>Houve um erro ao carregar o histórico. Recarregue a página.</p>)}
         {!states.carregando && states.pedidos && states.pedidos.orders && states.pedidos.orders.map((order, index) => {
