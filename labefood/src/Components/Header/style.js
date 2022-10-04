@@ -17,8 +17,8 @@ padding: 13px 30px 12px;
 `
 
 export const TituloHeader = styled.span`
-
-width: 80px;
+text-align: center;
+width: 55%;
 height: 19px;
 font-family: Roboto;
 font-size: 18px;
