@@ -7,12 +7,14 @@ import {
   Busca, 
   RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
   CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage, SignupPage 
+  PedidoAndamentoPage, SignupPage
 } from '../Pages'
 //import { SignupPage } from '../Pages/cadastro/signup/SignupPage'
 //import RegisterForm from '../Pages/cadastro/registerForm'
 import CadastroEndereco from '../Pages/cadastro/endereco/CadastroEndereco'
 import { LogoPage } from './../Pages/LogoPage/LogoPage';
+
+
 
 export const Router = () => {
     return(
