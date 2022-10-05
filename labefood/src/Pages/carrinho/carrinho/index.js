@@ -41,7 +41,7 @@ export const CarrinhoPage = () => {
              </CardProductsDiv>  
           )
      })
-     
+     console.log(productRender)
      return (
 
           <MainDiv>

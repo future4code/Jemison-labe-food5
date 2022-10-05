@@ -10,10 +10,20 @@ export const CardConfirmacao = (props) => {
 
     const { states, setters } = useContext(Contexts)
 
-    const adicionaQtd = () => {
+    const adicionaQtd = (id) => {
         console.log(`${states.selectControl} é a quantidade de itens do produto ${props.product} escolhida`)
-    }
+        const copyProductsCart = [...states.productsCart];
 
+        const item = copyProductsCart.find((product) => product.id === id);
+
+        if(!item){
+            copyProductsCart.push({id:id, qtd:1});
+        }else{
+            item.qtd = item.qdt +1;
+        }
+        states.setProductsCart(copyProductsCart)
+    }
+    console.log(states.productsCart)
     return (
         <ThemeProvider theme={theme} >
             <Box>
