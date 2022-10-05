@@ -5,8 +5,11 @@ import { HeaderSearch } from "../../Components/Header/header"
 import { BarraBusca } from "../../Components/BarraBusca/BarraBusca"
 import { BuscaResultadoCard } from "../../Components/BuscaResultadoCard/BuscaResultadoCard"
 import { Container, Box, Typography } from '@mui/material'
+import useProtectPage from "../../Hook/useProtectPage"
 
 export const Busca = () => {
+
+    useProtectPage();
 
     const { states } = useContext(Contexts)
 

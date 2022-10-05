@@ -1,6 +1,10 @@
 import { Header1 } from "../../../Components/Header/header"
+import useProtectPage from "../../../Hook/useProtectPage"
 
 export const EnderecoCadastroPage = () => {
+
+    useProtectPage();
+    
     return (
      <div>
           <Header1/>
