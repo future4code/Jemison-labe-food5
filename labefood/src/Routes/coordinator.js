@@ -54,7 +54,7 @@ export const goToCarrinhoVazioPage = (navigator) => {
 }
 
 export const goToCarrinhoPage = (navigator) => {
-    navigator('/carrinho');
+    navigator('/cart');
 }
 
 export const goToPedidoAndamentoPage = (navigator) => {

@@ -13,7 +13,9 @@ export const GlobalState = (props) => {
 
     const [selectControl, setSelectControl] = useState('')
 
-    const [ product, setProduct ] = useState('')
+    const [radioControl, setRadioControl] = useState('')
+
+    const [product, setProduct] = useState('')
 
     const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': auth}}, {})
 
@@ -29,6 +31,8 @@ export const GlobalState = (props) => {
     const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': auth}}, {})
     
     const [productsCart, setProductsCart] = useState([])
+
+    const [totalValue, setTotalValue] = useState([])
 
     const [form, onChangeInputs, clearInputs] = useForm({ name:'', email: '', cpf: ''})
 
@@ -56,9 +60,11 @@ export const GlobalState = (props) => {
                     errorDetails,
                     abreConfirm,
                     selectControl,
-                    product
+                    product,
+                    totalValue,
+                    radioControl
                   }
-    const setters = { setAtualizado, setRestaurantId, setProductsCart, setAbreConfirm, setSelectControl, setProduct }
+    const setters = { setAtualizado, setRestaurantId, setProductsCart, setAbreConfirm, setSelectControl, setProduct, setTotalValue, setRadioControl }
     const requests = { putRequest }
 
   return (

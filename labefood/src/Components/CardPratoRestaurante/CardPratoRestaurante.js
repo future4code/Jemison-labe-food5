@@ -1,8 +1,14 @@
 import React from 'react'
 import { theme } from '../../Constants/theme'
 import { ThemeProvider, Box, Container, Card, CardContent, CardMedia, Grid, Typography, Button } from '@mui/material'
+import { useContext } from 'react'
+import { Contexts } from '../../Global/context'
 
 export const CardPratoRestaurante = (props) => {
+    const {setters} = useContext(Contexts)
+    const total = props.total
+    setters.setTotalValue(total)
+    
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{mt: 1}}>

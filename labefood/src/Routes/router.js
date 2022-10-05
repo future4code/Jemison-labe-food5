@@ -3,9 +3,8 @@ import {
   TelaInicialPage, LoginPage, 
   SignupPage, EnderecoCadastroPage,
   Perfil, EditarCadastro, EditarEnderecoPage,
-  Busca, Confirmacao, 
-  CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage, FeedPage, Restaurante
+  Busca, Confirmacao, CarrinhoPage, 
+  PedidoAndamentoPage, FeedPage, Restaurante, Cart
 } from '../Pages'
 //import RegisterForm from '../Pages/cadastro/registerForm'
 
@@ -26,7 +25,7 @@ export const Router = () => {
                 <Route path="/search" element={<Busca/>}/>
                 <Route path="/restaurante/:id" element={<Restaurante/>}/>
                 <Route path="/confirmacao" element={<Confirmacao/>}/>
-                <Route path="/carrinho-vazio" element={<CarrinhoVazioPage/>}/>
+                <Route path="/cart" element={<Cart/>}/>
                 <Route path="/carrinho" element={<CarrinhoPage/>}/>
                 <Route path="/pedido-andamento" element={<PedidoAndamentoPage/>}/>
               </Routes>

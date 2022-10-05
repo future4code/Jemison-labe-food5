@@ -14,6 +14,8 @@ export const CarrinhoPage = () => {
 
      const [productInfo, setProductInfo] = useState([])
 
+     console.log(states.productsCart)
+
      useEffect(() => {
           states && states.productsCart && states.productsCart.map((product) => {
                productInfo.push({id: product.id, quantity: product.quantity})

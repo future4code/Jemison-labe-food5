@@ -9,6 +9,6 @@ export * from './perfil/editar-endereco';
 export * from './search/Busca';
 export * from './restaurante/restaurante/Restaurante';
 export * from './restaurante/confirmacao/Confirmacao';
-export * from './carrinho/carrinho-vazio';
+export * from './carrinho/cart/Cart';
 export * from './carrinho/carrinho';
 export * from './pedido-andamento';
