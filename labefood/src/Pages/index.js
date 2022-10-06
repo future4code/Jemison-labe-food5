@@ -5,11 +5,10 @@ export * from './cadastro/signup/SignupPage';
 export * from './cadastro/endereco/CadastroEndereco';
 export * from './perfil/perfil/Perfil';
 export * from './perfil/editar-cadastro/EditarCadastro';
-export * from './perfil/editar-endereco';
-export * from './search/Busca';
-export * from './restaurante/restaurantepage';
-export * from './restaurante/defalt-restaurante';
-export * from './restaurante/confirmacaopage';
+export * from './perfil/editar-endereco/EditarEndereco';
+export * from './search/Busca'
+export * from './restaurante/restaurante/Restaurante';
+export * from './restaurante/confirmacao/Confirmacao';
 export * from './carrinho/carrinho-vazio';
 export * from './carrinho/carrinho';
 export * from './pedido-andamento';

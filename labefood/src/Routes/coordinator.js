@@ -27,26 +27,22 @@ export const goToPerfilPage = (navigator) => {
 }
 
 export const goToEditarCadastroPage = (navigator) => {
-    navigator('/editar-cadastro');
+    navigator('/perfil/editar-cadastro');
 }
 
 export const goToEditarEnderecoPage = (navigator) => {
-    navigator('/editar-endereco');
+    navigator('/perfil/editar-endereco');
 }
 
 export const goToSearchPage = (navigator) => {
-    navigator('/searchplaceholder');
-}
-
-export const goToSearchResultsPage = (navigator) => {
-    navigator('/search-results');
+    navigator('/search');
 }
 export const goToRestaurantePage = (navigator) => {
     navigator('/restaurantepage');
 }
 
-export const goToDefaultRestaurantePage = (navigator) => {
-    navigator('/defalt-restaurante');
+export const goToDefaultRestaurantePage = (navigator, id) => {
+    navigator(`/restaurante/${id}`);
 }
 
 export const goToConfirmacaoPage = (navigator) => {
