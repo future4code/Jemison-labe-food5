@@ -35,18 +35,14 @@ export const goToEditarEnderecoPage = (navigator) => {
 }
 
 export const goToSearchPage = (navigator) => {
-    navigator('/searchplaceholder');
-}
-
-export const goToSearchResultsPage = (navigator) => {
-    navigator('/search-results');
+    navigator('/search');
 }
 export const goToRestaurantePage = (navigator) => {
     navigator('/restaurantepage');
 }
 
-export const goToDefaultRestaurantePage = (navigator) => {
-    navigator('/defalt-restaurante');
+export const goToDefaultRestaurantePage = (navigator, id) => {
+    navigator(`/restaurante/${id}`);
 }
 
 export const goToConfirmacaoPage = (navigator) => {

@@ -1,15 +1,15 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { 
   TelaInicialPage, LoginPage, 
-  FeedPage, 
-  SignupPage, EnderecoCadastroPage, 
-  Perfil, EditarCadastro, EditarEndereco,
-  Busca, 
-  RestaurantePage, DefaultRestauratePage, ConfirmacaoPage, 
+  SignupPage, EnderecoCadastroPage,
+  Perfil, EditarCadastro, EditarEnderecoPage,
+  Busca, Confirmacao, 
   CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage
+  PedidoAndamentoPage, FeedPage, Restaurante
 } from '../Pages'
 //import RegisterForm from '../Pages/cadastro/registerForm'
+
+
 
 export const Router = () => {
     return(
@@ -24,9 +24,8 @@ export const Router = () => {
                 <Route path="/perfil/editar-cadastro" element={<EditarCadastro/>}/>
                 <Route path="/perfil/editar-endereco" element={<EditarEndereco/>}/>
                 <Route path="/search" element={<Busca/>}/>
-                <Route path="/restaurantepage" element={<RestaurantePage/>}/>
-                <Route path="/defalt-restaurante" element={<DefaultRestauratePage/>}/>
-                <Route path="/confirmacaopage" element={<ConfirmacaoPage/>}/>
+                <Route path="/restaurante/:id" element={<Restaurante/>}/>
+                <Route path="/confirmacao" element={<Confirmacao/>}/>
                 <Route path="/carrinho-vazio" element={<CarrinhoVazioPage/>}/>
                 <Route path="/carrinho" element={<CarrinhoPage/>}/>
                 <Route path="/pedido-andamento" element={<PedidoAndamentoPage/>}/>

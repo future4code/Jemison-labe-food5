@@ -23,7 +23,7 @@ export const BuscaResultadoCard = (props) => {
                                 </Grid>
                                 <Grid item xs={6}>
                                     <Typography textAlign={'right'} color='primary' sx={{ height:'1.1rem'}} variant="body2">
-                                       Frete {props.shipping}
+                                       Frete {props.shipping.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                                     </Typography>
                                 </Grid>
                             </Grid>

@@ -45,9 +45,7 @@ export const HeaderFeed = () => {
     return(
         <HeaderStyled>
             <DivTituloFeed>
-            <TituloHeader>
-            FutureEats
-            </TituloHeader>
+            <TituloHeader>FutureEats</TituloHeader>
             </DivTituloFeed>            
         </HeaderStyled>
     )
@@ -57,7 +55,7 @@ export const HeaderCarrinho = () => {
         <HeaderStyled>
             <DivTituloFeed>
             <TituloHeader>
-            Carrinho
+            Meu carrinho
             </TituloHeader>
             </DivTituloFeed>            
         </HeaderStyled>
