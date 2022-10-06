@@ -5,9 +5,25 @@ import { useContext } from 'react'
 import { Contexts } from '../../Global/context'
 
 export const CardPratoRestaurante = (props) => {
-    const {setters} = useContext(Contexts)
+    const { states, setters } = useContext(Contexts)
     const total = props.total
     setters.setTotalValue(total)
+    
+    console.log(states.product)
+
+
+    const checkCart = (order) => {
+        const cartIndex = states.productsCart.findIndex((item) => { return item.id === order.id })
+        if (cartIndex === -1) {
+            return (
+                <Button onClick={props.onClick} variant="outlined" size='small' color='secondary' sx={{ ml: 2.5, mt: 1, borderRadius: '8px 0px 8px 0px' }}>Adicionar</Button>
+            )
+        } else {
+            return (
+                <Button onClick={props.onClick} variant="outlined" size='small' color='alert' sx={{ ml: 2.5, mt: 1, borderRadius: '8px 0px 8px 0px' }}>Remover</Button>
+            )
+        }
+    }
     
     return (
         <ThemeProvider theme={theme}>
@@ -32,7 +48,7 @@ export const CardPratoRestaurante = (props) => {
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={6} sx={{ padding: 0 }}>
-                                        <Button onClick={props.onClick} variant="outlined" size='small' color='secondary' sx={{ ml: 2.5, mt: 1, borderRadius: '8px 0px 8px 0px' }}>Adicionar</Button>
+                                        {checkCart(states.product)}
                                     </Grid>
                                 </Grid>
                             </Box>
