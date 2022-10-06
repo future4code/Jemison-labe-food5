@@ -7,8 +7,11 @@ import { useRequestData } from "../../../Hook/useRequestData"
 import { useState } from "react"
 import { useEffect } from "react"
 import { useContext } from "react"
+import useProtectPage from "../../../Hook/useProtectPage"
 
 export const CarrinhoPage = () => {
+
+     useProtectPage();
 
      const { states } = useContext(Contexts);
 

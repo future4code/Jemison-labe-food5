@@ -10,9 +10,12 @@ import { midGreen, greyish } from "../../Constants/colors";
 import { theme } from '../../Constants/theme'
 
 import { goToSearchPage } from "../../Routes/coordinator";
+import useProtectPage from "../../Hook/useProtectPage";
 
 
 export const FeedPage = () => {
+
+  useProtectPage();
 
   const navigate = useNavigate();
 
