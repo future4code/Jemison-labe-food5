@@ -16,10 +16,12 @@ import { validateStreet, validateNumber, validateComplement,
         validateNeighbourhood, validateCity, validateState } from "../../../Constants/constants";
 import { goToFeed, goToLoginPage } from "../../../Routes/coordinator";
 import { Header1 } from '../../../Components/Header/header'
+import useProtectPage from "../../../Hook/useProtectPage"
 
 
 
-const CadastroEndereco = () => {
+export const CadastroEndereco = () => {
+    useProtectPage();
 
     const navigate = useNavigate()
 

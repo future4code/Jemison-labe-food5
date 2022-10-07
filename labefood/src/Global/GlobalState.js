@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRequestData } from '../Hook/useRequestData'
 import { Contexts } from './context'
-import { BASE_URL, auth } from '../Constants/constants'
+import { BASE_URL } from '../Constants/constants'
 import { useForm } from '../Hook/useForm'
 import { usePutRequest } from '../Services/usePutRequest'
 
@@ -13,20 +13,20 @@ export const GlobalState = (props) => {
 
     const [selectControl, setSelectControl] = useState('')
 
-    const [ product, setProduct ] = useState('')
+    const [product, setProduct] = useState('')
 
-    const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': auth}}, {})
+    const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': localStorage.getItem("token")}}, {})
 
     const [rest, loadingRestaurants, errorRestaurants] = useRequestData(
       `${BASE_URL}/restaurants`,
-      { headers: {'auth': auth}}, {}
+      { headers: {'auth': localStorage.getItem("token")}}, {}
     );
 
     const [restaurantId, setRestaurantId] = useState('')
 
-    const [restaurantDetails, loadingDetails, errorDetails] = useRequestData(`${BASE_URL}/restaurants/${restaurantId}`, { headers: {'auth': auth}}, {})
+    const [restaurantDetails, loadingDetails, errorDetails] = useRequestData(`${BASE_URL}/restaurants/${restaurantId}`, { headers: {'auth': localStorage.getItem("token")}}, {})
 
-    const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': auth}}, {})
+    const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': localStorage.getItem("token")}}, {})
     
     const [productsCart, setProductsCart] = useState([])
 
@@ -34,14 +34,16 @@ export const GlobalState = (props) => {
     const [endereco, onChangeEndereco, clearInputsEndereco] = useForm({ street:'', number: '', complement: '', neighbourhood: '', city: '', state: ''})
     const [searchInput, onChangeSearch] = useForm({searchResults: ''})
 
-    const putUsuario = usePutRequest(`${BASE_URL}/profile`, usuario, { headers: {'auth': auth}})
-    const putEndereco = usePutRequest(`${BASE_URL}/address`, endereco, { headers: {'auth': auth}})
+    const putUsuario = usePutRequest(`${BASE_URL}/profile`, usuario, { headers: {'auth': localStorage.getItem("token")}})
+    const putEndereco = usePutRequest(`${BASE_URL}/address`, endereco, { headers: {'auth': localStorage.getItem("token")}})
     
     const states = {perfil, 
                     pedidos, 
                     carregando, 
                     erro, 
-                    usuario, onChangeUsuario, clearInputsUsuario
+                    usuario, 
+                    onChangeUsuario, 
+                    clearInputsUsuario,
                     rest,
                     loadingRestaurants,
                     errorRestaurants,
@@ -59,7 +61,7 @@ export const GlobalState = (props) => {
                     endereco, onChangeEndereco, clearInputsEndereco
                   }
     const setters = { setAtualizado, setRestaurantId, setProductsCart, setAbreConfirm, setSelectControl, setProduct }
-    const requests = { putRequest, putUsuario, putEndereco }
+    const requests = { putUsuario, putEndereco }
 
   return (
       <Contexts.Provider value={{ states, setters, requests }}>
