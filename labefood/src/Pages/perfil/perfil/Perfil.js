@@ -1,6 +1,7 @@
 import { useContext } from "react"
 
 import { HeaderPerfil } from "../../../Components/Header/header"
+import { Footer } from '../../../Components/Footer/footer'
 import { DadosMeuPerfil } from "../../../Components/DadosMeuPerfil/DadosMeuPerfil"
 import { CardHistoricoPedidos } from '../../../Components/CardHistoricoPedidos/CardHistoricoPedidos'
 import { Contexts } from "../../../Global/context"
@@ -22,7 +23,7 @@ export const Perfil = () => {
         {!states.carregando && states.pedidos && states.pedidos.orders && states.pedidos.orders.map((order, index) => {
           return <CardHistoricoPedidos key={index} nomeRestaurante={order.restaurantName} criado={order.createdAt} subtotal={order.totalPrice}/>
         })}
-        
+        <Footer />
      </Box>
     )
 }

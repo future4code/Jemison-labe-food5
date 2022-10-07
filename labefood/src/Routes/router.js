@@ -1,12 +1,21 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { 
-  TelaInicialPage, LoginPage, 
-  SignupPage, EnderecoCadastroPage,
-  Perfil, EditarCadastro, EditarEnderecoPage,
-  Busca, Confirmacao, CarrinhoPage, 
-  PedidoAndamentoPage, FeedPage, Restaurante, Cart
+import {
+  LogoPage,
+  CadastroEndereco,
+  SignupPage,
+  LoginPage, 
+  FeedPage,  
+  Perfil,
+  EditarCadastro,
+  EditarEndereco,
+  Busca, 
+  Confirmacao, 
+  CarrinhoPage, 
+  PedidoAndamentoPage, 
+  Restaurante, 
+  Cart
 } from '../Pages'
-//import RegisterForm from '../Pages/cadastro/registerForm'
+import { LogoPage } from './../Pages/LogoPage/LogoPage';
 
 
 
@@ -14,14 +23,14 @@ export const Router = () => {
     return(
         <BrowserRouter>
           <Routes>
-                <Route path="/telainicial" element={<TelaInicialPage/>}/>
-                <Route index element={<LoginPage/>}/>
+                <Route index element={<LogoPage/>}/>
+                <Route path="/loginpage" element={<LoginPage/>}/>
                 <Route path="/feed" element={<FeedPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
-                <Route path="/endereco" element={<EnderecoCadastroPage/>}/>
+                <Route path="/endereco" element={<CadastroEndereco/>}/>
                 <Route path="/perfil" element={<Perfil />}/>
                 <Route path="/perfil/editar-cadastro" element={<EditarCadastro/>}/>
-                <Route path="/perfil/editar-endereco" element={<EditarEnderecoPage/>}/>
+                <Route path="/perfil/editar-endereco" element={<EditarEndereco/>}/>
                 <Route path="/search" element={<Busca/>}/>
                 <Route path="/restaurante/:id" element={<Restaurante/>}/>
                 <Route path="/confirmacao" element={<Confirmacao/>}/>

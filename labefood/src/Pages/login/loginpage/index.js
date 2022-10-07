@@ -15,6 +15,7 @@ import { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 
+ 
 
 export const LoginPage = () => {
 
@@ -55,8 +56,9 @@ export const LoginPage = () => {
 
 
 return (
+     
      <LoginPageContainer>
-          <ImagemLogo src={logo} alt="Logotipo"/>
+           <ImagemLogo src={logo} alt="Logotipo"/>
           <TituloEntrar>
               <Typography component='h2' variant="subtitle1">Entrar</Typography>
           </TituloEntrar>

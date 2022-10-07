@@ -9,9 +9,13 @@ import { CardPratoRestaurante } from "../../../Components/CardPratoRestaurante/C
 import { CardConfirmacao } from "../../../Components/CardConfirmacao/CardConfirmacao"
 import { Box } from '@mui/material'
 import { Footer } from '../../../Components/Footer/footer'
+import useProtectPage from "../../../Hook/useProtectPage"
 
 
 export const Restaurante = () => {
+    
+    useProtectPage();
+
     const pathParam = useParams()
 
     const { states, setters } = useContext(Contexts)

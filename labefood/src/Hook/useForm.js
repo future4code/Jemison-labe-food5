@@ -15,3 +15,4 @@ export const useForm = (inicialState) => {
     return [form, onChangeInputs, clearInputs]
 
 }
+export default useForm;
