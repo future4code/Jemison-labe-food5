@@ -5,6 +5,8 @@ import { BASE_URL } from '../Constants/constants'
 import { useForm } from '../Hook/useForm'
 import { usePutRequest } from '../Services/usePutRequest'
 
+
+
 export const GlobalState = (props) => {
 
     const [atualizado, setAtualizado] = useState('')
