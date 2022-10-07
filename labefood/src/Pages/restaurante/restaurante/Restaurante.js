@@ -8,6 +8,7 @@ import { HeaderRestaurante } from "../../../Components/Header/header"
 import { CardPratoRestaurante } from "../../../Components/CardPratoRestaurante/CardPratoRestaurante"
 import { CardConfirmacao } from "../../../Components/CardConfirmacao/CardConfirmacao"
 import { Box } from '@mui/material'
+import { Footer } from '../../../Components/Footer/footer'
 import useProtectPage from "../../../Hook/useProtectPage"
 
 
@@ -23,7 +24,11 @@ export const Restaurante = () => {
         setters.setRestaurantId(pathParam.id)
     }, [pathParam.id])
     
-
+    const addToCart = (order, qtd) => {
+        const newCart = [...states.productsCart]
+        newCart.push({...order, qtd: qtd})
+        setters.setProductsCart(newCart)
+    }
 
     return (
         <Box>
@@ -35,9 +40,10 @@ export const Restaurante = () => {
             {states.loadingDetails && (<p>Carregando Pratos do Restaurante</p>)}
             {!states.loadingDetails && states.errorDetails && (<p>Houve um erro ao carregar o histórico. Recarregue a página.</p>)}
             {!states.loadingDetails && states.restaurantDetails && states.restaurantDetails.restaurant && states.restaurantDetails.restaurant.products && states.restaurantDetails.restaurant.products.map((principal, index) => {
-                return <CardPratoRestaurante onClick={(ev) => { ev.preventDefault(); setters.setProduct(principal.name); setters.setAbreConfirm(true)}} key={index} image={principal.photoUrl} description={principal.description} name={principal.name} price={principal.price} />
+                return <CardPratoRestaurante onClick={(ev) => { ev.preventDefault(); setters.setProduct(principal) ; setters.setAbreConfirm(true)}} key={index} image={principal.photoUrl} description={principal.description} name={principal.name} price={principal.price} />
             })}
-            {states.abreConfirm && ( <CardConfirmacao open={states.abreConfirm} close={() => { setters.setAbreConfirm(false)}} product={states.product} /> )}
+            {states.abreConfirm && ( <CardConfirmacao onClick={() => { addToCart(states.product, states.selectControl) }} open={states.abreConfirm} close={() => { setters.setAbreConfirm(false)}} /> )}
+            <Footer />
         </Box>
     )
 }

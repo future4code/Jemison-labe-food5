@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {
+  LogoPage,
   CadastroEndereco,
   SignupPage,
   LoginPage, 
@@ -9,10 +10,10 @@ import {
   EditarEndereco,
   Busca, 
   Confirmacao, 
-  CarrinhoVazioPage, 
   CarrinhoPage, 
   PedidoAndamentoPage, 
-  Restaurante
+  Restaurante, 
+  Cart
 } from '../Pages'
 import { LogoPage } from './../Pages/LogoPage/LogoPage';
 
@@ -33,7 +34,7 @@ export const Router = () => {
                 <Route path="/search" element={<Busca/>}/>
                 <Route path="/restaurante/:id" element={<Restaurante/>}/>
                 <Route path="/confirmacao" element={<Confirmacao/>}/>
-                <Route path="/carrinho-vazio" element={<CarrinhoVazioPage/>}/>
+                <Route path="/cart" element={<Cart/>}/>
                 <Route path="/carrinho" element={<CarrinhoPage/>}/>
                 <Route path="/pedido-andamento" element={<PedidoAndamentoPage/>}/>
               </Routes>

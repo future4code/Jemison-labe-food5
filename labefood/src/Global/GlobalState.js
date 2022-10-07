@@ -13,6 +13,8 @@ export const GlobalState = (props) => {
 
     const [selectControl, setSelectControl] = useState('')
 
+    const [radioControl, setRadioControl] = useState('')
+
     const [product, setProduct] = useState('')
 
     const [perfil] = useRequestData(`${BASE_URL}/profile`, { headers: {'auth': localStorage.getItem("token")}}, {})
@@ -29,6 +31,8 @@ export const GlobalState = (props) => {
     const [pedidos, carregando, erro] = useRequestData(`${BASE_URL}/orders/history`, { headers: {'auth': localStorage.getItem("token")}}, {})
     
     const [productsCart, setProductsCart] = useState([])
+
+    const [totalValue, setTotalValue] = useState([])
 
     const [usuario, onChangeUsuario, clearInputsUsuario] = useForm({ name:'', email: '', cpf: ''})
     const [endereco, onChangeEndereco, clearInputsEndereco] = useForm({ street:'', number: '', complement: '', neighbourhood: '', city: '', state: ''})
@@ -58,9 +62,14 @@ export const GlobalState = (props) => {
                     abreConfirm,
                     selectControl,
                     product,
-                    endereco, onChangeEndereco, clearInputsEndereco
+                    totalValue,
+                    radioControl,
+                    endereco,
+                    onChangeEndereco,
+                    clearInputsEndereco
                   }
-    const setters = { setAtualizado, setRestaurantId, setProductsCart, setAbreConfirm, setSelectControl, setProduct }
+                  
+    const setters = { setAtualizado, setRestaurantId, setProductsCart, setAbreConfirm, setSelectControl, setProduct, setTotalValue, setRadioControl }
     const requests = { putUsuario, putEndereco }
 
   return (
