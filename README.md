@@ -19,8 +19,6 @@
 ##  👩🏾Quem Faz 
 
 - [Ste Emidio](https://www.github.com/sterx17)
-- [Veronica Dalcolmo](https://github.com/vevedm)
-- [Daniel Barradas](https://github.com/barradasdan)
 - [Karolina Marques](https://github.com/karolinamarques)
 - [Vanessa Mainara](https://github.com/VanessaMainara)
 - [Huan Silva Lima](https://github.com/huanslima)
@@ -45,18 +43,14 @@
 ##  🧭Status do Projeto
 
  - ⏳ Fazendo
- Perfil: useProtectedPage
- Editar Cadastro: useProtectedPage
- Editar Endereço: useProtectedPage
- Login: Estilização
- Cadastro: Estilização
- Feed: Lógica
- Carrinho: Lógica
- Busca
- 
- - 📥 Testando
- Header
- Footer
+ Perfil: Feito
+ Editar Cadastro: Feito
+ Editar Endereço: Feito
+ Login: Feito
+ Cadastro: Feito
+ Feed: Feito
+ Carrinho: Incompleto
+ Busca: Feito
  
  - ⌛ Feito
  Plano Hierárquico
@@ -75,22 +69,19 @@
 ## ☑️Requisitos de Funcionalidade
 
 - [x] Animação da Tela Inicial mudando para a Tela de Login
-- [ ] Realização de Login
-- [ ] Criação do Cadastro
-- [ ] Carrosel de opções de comida com filtro
-- [ ] Busca em página separada
-- [ ] Popup para inserir quantidade
+- [x] Realização de Login
+- [x] Criação do Cadastro
+- [x] Carrosel de opções de comida com filtro
+- [x] Busca em página separada
+- [x] Popup para inserir quantidade
 - [ ] Popup de pedido em andamento
 - [x] Navegação para editar cadastro/endereço
-
-Além das funcionalidades, aqui você pode por Prints e gifs do seu projeto, como ele funciona.
-
 
 ---
 
 ## 🔗Link para Acessar
 
-- **Link do Surge:**
+- **Link do Surge:** https://tasty-grain.surge.sh
 
 ---
 
