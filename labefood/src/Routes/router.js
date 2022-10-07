@@ -15,13 +15,13 @@ import {
   Restaurante, 
   Cart
 } from '../Pages'
-import { LogoPage } from './../Pages/LogoPage/LogoPage';
 
 
 
 export const Router = () => {
     return(
         <BrowserRouter>
+        
           <Routes>
                 <Route index element={<LogoPage/>}/>
                 <Route path="/loginpage" element={<LoginPage/>}/>
