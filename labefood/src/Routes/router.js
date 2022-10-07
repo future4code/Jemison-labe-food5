@@ -1,14 +1,19 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-//import Signup from '../Pages/cadastro/signup/Signup'
-import { 
+import {
+  CadastroEndereco,
+  SignupPage,
   LoginPage, 
   FeedPage,  
-  Perfil, EditarCadastro, EditarEndereco,
-  Busca, Confirmacao, 
-  CarrinhoVazioPage, CarrinhoPage, 
-  PedidoAndamentoPage, Restaurante
+  Perfil,
+  EditarCadastro,
+  EditarEndereco,
+  Busca, 
+  Confirmacao, 
+  CarrinhoVazioPage, 
+  CarrinhoPage, 
+  PedidoAndamentoPage, 
+  Restaurante
 } from '../Pages'
-import CadastroEndereco from '../Pages/cadastro/endereco/CadastroEndereco'
 import { LogoPage } from './../Pages/LogoPage/LogoPage';
 
 
@@ -17,8 +22,8 @@ export const Router = () => {
     return(
         <BrowserRouter>
           <Routes>
-                <Route path="/telainicial" element={<LogoPage/>}/>
-                <Route index element={<LoginPage/>}/>
+                <Route index element={<LogoPage/>}/>
+                <Route path="/loginpage" element={<LoginPage/>}/>
                 <Route path="/feed" element={<FeedPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
                 <Route path="/endereco" element={<CadastroEndereco/>}/>

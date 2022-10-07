@@ -18,7 +18,7 @@ export const LogoPage = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             loginPage()
-        }, 5000);
+        }, 8000);
         return () => clearTimeout(timer);
     }, []);
 
