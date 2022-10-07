@@ -15,7 +15,6 @@ import {
   Restaurante, 
   Cart
 } from '../Pages'
-import { LogoPage } from './../Pages/LogoPage/LogoPage';
 
 
 
