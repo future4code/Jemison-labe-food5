@@ -81,7 +81,7 @@
 
 ## 🔗Link para Acessar
 
-- **Link do Surge:** aloof-pickle.surge.sh
+- **Link do Surge:** https://aloof-pickle.surge.sh/
 
 ---
 
