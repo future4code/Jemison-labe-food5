@@ -1,25 +1,26 @@
 import styled from 'styled-components'
 
 export const ContainerLogo = styled.div`
-    width: 360px;
-    height: 640px;
-    padding: 0 0 26px;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 0px;
+    background-color: black;
 `
 export const Botao = styled.div`
-    width: 40vw;
-    height: 72vh;
+    width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    
     border-radius: 10px;
-    padding: 10px;
+    padding: 0px;
     background-color: black;
 
     img{
-        margin-top:10vw;
+        margin-top:50vw;
     }
 `
